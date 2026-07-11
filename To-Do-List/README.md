@@ -1,54 +1,60 @@
-# React + TypeScript + Vite
+To-Do List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple task management app, built to practice React + TypeScript fundamentals.
 
-Currently, two official plugins are available:
+Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+Add new tasks
+Mark tasks as completed
+Delete tasks
+Filter: All / Active / Completed
+Data persistence via localStorage (tasks remain saved after refresh)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Tech stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+React
+TypeScript
+Vite — build tool
+Plain CSS (no external libraries)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+
+Getting started
+
+bashgit clone https://github.com/pocolalexx/todo-app.git
+cd todo-app
+npm install
+npm run dev
+
+The app will start at http://localhost:5173.
+
+Project structure
+
+src/
+├── types.ts        # Todo type (id, text, completed)
+├── TodoInput.tsx    # Component for adding a new task
+├── TodoItem.tsx     # Component for a single task
+├── TodoList.tsx     # Component that renders the list of tasks
+├── App.tsx          # Main component, holds state and logic
+└── App.css          # Styling
+
+What I practiced
+
+
+useState and useEffect
+Controlled components (input bound to state)
+Passing data between components via props
+Immutable state updates (spread operator, .map(), .filter())
+Typing with TypeScript (types, typed props)
+Data persistence with localStorage
+
+
+Possible future improvements
+
+
+Inline editing of an existing task
+"Clear completed tasks" button
+Drag & drop reordering
+Real backend (e.g. Firebase) instead of localStorage
