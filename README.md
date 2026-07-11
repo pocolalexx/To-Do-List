@@ -1,37 +1,36 @@
-To-Do List
+# To-Do List
 
 A simple task management app, built to practice React + TypeScript fundamentals.
 
-Features
+## Features
 
+- Add new tasks
+- Mark tasks as completed
+- Delete tasks
+- Filter: All / Active / Completed
+- Data persistence via `localStorage` (tasks remain saved after refresh)
 
-Add new tasks
-Mark tasks as completed
-Delete tasks
-Filter: All / Active / Completed
-Data persistence via localStorage (tasks remain saved after refresh)
+## Tech stack
 
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) — build tool
+- Plain CSS (no external libraries)
 
-Tech stack
+## Getting started
 
-
-React
-TypeScript
-Vite — build tool
-Plain CSS (no external libraries)
-
-
-Getting started
-
-bashgit clone https://github.com/pocolalexx/todo-app.git
+```bash
+git clone https://github.com/pocolalexx/todo-app.git
 cd todo-app
 npm install
 npm run dev
+```
 
-The app will start at http://localhost:5173.
+The app will start at `http://localhost:5173`.
 
-Project structure
+## Project structure
 
+```
 src/
 ├── types.ts        # Todo type (id, text, completed)
 ├── TodoInput.tsx    # Component for adding a new task
@@ -39,22 +38,20 @@ src/
 ├── TodoList.tsx     # Component that renders the list of tasks
 ├── App.tsx          # Main component, holds state and logic
 └── App.css          # Styling
+```
 
-What I practiced
+## What I practiced
 
+- `useState` and `useEffect`
+- Controlled components (input bound to state)
+- Passing data between components via props
+- Immutable state updates (spread operator, `.map()`, `.filter()`)
+- Typing with TypeScript (types, typed props)
+- Data persistence with `localStorage`
 
-useState and useEffect
-Controlled components (input bound to state)
-Passing data between components via props
-Immutable state updates (spread operator, .map(), .filter())
-Typing with TypeScript (types, typed props)
-Data persistence with localStorage
+## Possible future improvements
 
-
-Possible future improvements
-
-
-Inline editing of an existing task
-"Clear completed tasks" button
-Drag & drop reordering
-Real backend (e.g. Firebase) instead of localStorage
+- Inline editing of an existing task
+- "Clear completed tasks" button
+- Drag & drop reordering
+- Real backend (e.g. Firebase) instead of `localStorage`
